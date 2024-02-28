@@ -20,6 +20,9 @@ export default function AssideBasket({ basket, setBasket }) {
     });
     setBasket(copyBasket);
   }
+  function deleted (){
+    location.reload() 
+  }
   return (
     <div className="cont__activeBurgers">
       <div className="container_basket">
@@ -40,6 +43,9 @@ export default function AssideBasket({ basket, setBasket }) {
           <h1>Итого</h1>
           <h2>{allPriceProductsCart(basket)}₽</h2>
         </div>
+        <button onClick={ () => {
+          deleted ();
+        }}>Очистить корзину</button>
         <div className="wrapper_delivery">
           <Delivery allPrice={allPriceProductsCart(basket)}/>
         </div>

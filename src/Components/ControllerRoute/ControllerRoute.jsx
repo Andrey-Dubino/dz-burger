@@ -99,8 +99,7 @@ export default function ControllerRoute({ stateBasket, stateModal }) {
             <ProductsComponent
               productArr={products.sauces.items}
               titleProd={products.sauces.title}
-              stateB
-              asket={stateBasket}
+              stateBasket={stateBasket}
               stateModal={stateModal}
             />
           }

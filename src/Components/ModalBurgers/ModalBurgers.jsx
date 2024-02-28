@@ -2,8 +2,19 @@ import "./ModalBurgers.scss";
 import { v4 as uuidv4 } from "uuid";
 import close from "../../assets/close.svg";
 import logicAddBasketProduct from "../Products/logicAddBasketProduct";
+
 export default function ModalBurgers({ stateBasket, setShowModal, cardModal }) {
   const { title, img, price, description, sostav } = cardModal;
+  function editCountCart(id, num) {
+    const copyBasket = basket.map((item) => {
+      if (item.id === id) {
+        item.count += num;
+        return item;
+      }
+      return item;
+    });
+    setBasket(copyBasket);
+  }
   return (
     <div className="modal" onClick={() => setShowModal(false)}>
       <div
@@ -46,6 +57,7 @@ export default function ModalBurgers({ stateBasket, setShowModal, cardModal }) {
           >
             Добавить
           </button>
+          
 
           <div className="price">
             <span>{price}</span>

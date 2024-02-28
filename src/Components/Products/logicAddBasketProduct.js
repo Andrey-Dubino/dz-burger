@@ -21,6 +21,6 @@ export default function logicAddBasketProduct(item, stateBasket) {
     stateBasket.basket.length > 0
       ? stateBasket.basket[stateBasket.basket.length - 1].id
       : 0;
-  copyItem.id = +lastElementIdBasket.id + 1;
+  copyItem.id = +lastElementIdBasket + 1;
   stateBasket.setBasket((prevState) => [...prevState, copyItem]);
 }
